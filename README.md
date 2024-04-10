@@ -1,7 +1,7 @@
 Introduction:
 =============
 
-descracker command permits to perform dictionary attack ( brute force ) against legacy DES based Unix password hashes. It uses CUDA as acceleration layer. I wrote this more than 10 years ago and recently I fount it in a backup file. I decided to release it with some modernisation ( CUDA and C++ versions ).
+descracker command permits to perform dictionary attack ( brute force ) against legacy DES based Unix password hashes. It uses CUDA as acceleration layer. I wrote this program more than 10 years ago and recently I recovered it from a forgotten backup file. I decided to release it with some modernisations ( CUDA and C++ versions ).
 
 Testing:
 =========
