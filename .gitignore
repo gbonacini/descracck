@@ -1,0 +1,15 @@
+
+_TMP
+libcrypt.a
+test_crypt
+*.swp
+*.o
+cracktrivial
+.vscode
+testdict.txt
+todo.txt
+seclist.txt
+report2.*
+seclist.lower.txt
+descracker
+
