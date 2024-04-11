@@ -31,16 +31,19 @@ Installation and Use:
 - Use program's help option to have information about required parameters:
 ```shell
 $ ./descracker -h
-./descracker [-H<hash>] [-d <config_full_path>] [-d level] | [-h]
+./descracker [-H<hash>] [-d dict_file] [ -t group | -T group ] | [-h]
 
  -H  <hash>      hash to crack
  -d  <dict_file> dictionary file
- -t  <1|2|3>     enable transformation mode
+ -t  <1|2|3>     enable cascading transformation groups
+ -T  <1|2|3>     enable specific transformation group
  -b  <units>     cuda block size (optional)
  -h              print this synopsis
 ```
 
-- This program, besides direct use of dictionary words, can employ some basic transformation on the same words. To activate the transformations  use -t flag. Groups 2 and 3 call the previous ones (i.e. if you specify 3 , also group 2 and 1 will be executed);<BR>
+- This program, besides direct use of dictionary words, can employ some basic transformation on the same words. <BR>
+- To activate the transformations  use -t flag. Groups 2 and 3 call the previous ones (i.e. if you specify 3 , also group 2 and 1 will be executed);<BR>
+- To use only a specific group use -T (i.e. -T 1 will execute only group 1);
 - The flag -H (capital 'h') specifies the hash to crack;<BR>
 - The flag -d specifies the dictionary file;<BR>
 
