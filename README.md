@@ -29,7 +29,7 @@ Installation and Use:
 - User must provide a text file with the dictionary to use for the brute force attack. The dictionary contains a single word for line, lines are '\n' terminated.
 
 - Use program's help option to have information about required parameters:
-```shell
+```
 $ ./descracker -h
 ./descracker [-H<hash>] [-d dict_file] [ -t group | -T group ] | [-h]
 
@@ -51,7 +51,7 @@ Transformations:
 ================
 
 - Group1:
-```shell
+```
 initial capital letter
 single digit, init / end + capital letter
 2 digits init/end + capital letter
@@ -61,7 +61,7 @@ capital incremental
 others
 ```
 - Group2:
-```shell
+```
 reverse
 specular
 repeated
@@ -69,7 +69,7 @@ leet
 others
 ```
 - Group3:
-```shell
+```
 toggle case
 duplicated initial
 duplicated characters
