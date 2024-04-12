@@ -68,7 +68,7 @@ int main(int argc, char** argv){
   if(!pcl.isSet('d') ){
         cerr << "-d flag is mandatory" << "\n";
         printInfo(argv[0]);
-    }
+  }
 
   if(pcl.isSet('t') ){
      multipleGroups = true;
@@ -90,6 +90,7 @@ int main(int argc, char** argv){
   tdc.crack(bthreads);
   if(multipleGroups  && ! tdc.hasResult()) tdc.execGroups(transformMode, bthreads);
   if(singleGroup && ! tdc.hasResult()) tdc.execGroup(transformMode, bthreads);
+  tdc.printPassword();
 
   return 0;	
 }

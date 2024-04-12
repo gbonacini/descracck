@@ -1284,8 +1284,6 @@ void DesCrack::crack(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDes<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_1(size_t blocks) noexcept{
@@ -1293,8 +1291,6 @@ void DesCrack::crackTr1_1(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_2(size_t blocks) noexcept{
@@ -1302,8 +1298,6 @@ void DesCrack::crackTr1_2(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_3(size_t blocks) noexcept{
@@ -1311,8 +1305,6 @@ void DesCrack::crackTr1_3(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_4(size_t blocks) noexcept{
@@ -1320,8 +1312,6 @@ void DesCrack::crackTr1_4(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_4<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_5(size_t blocks) noexcept{
@@ -1329,8 +1319,6 @@ void DesCrack::crackTr1_5(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_5<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr1_6(size_t blocks) noexcept{
@@ -1338,8 +1326,6 @@ void DesCrack::crackTr1_6(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr1_6<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr2_1(size_t blocks) noexcept{
@@ -1347,8 +1333,6 @@ void DesCrack::crackTr2_1(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr2_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr2_2(size_t blocks) noexcept{
@@ -1356,8 +1340,6 @@ void DesCrack::crackTr2_2(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr2_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr2_3(size_t blocks) noexcept{
@@ -1365,8 +1347,6 @@ void DesCrack::crackTr2_3(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr2_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr2_4(size_t blocks) noexcept{
@@ -1374,8 +1354,6 @@ void DesCrack::crackTr2_4(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr2_4<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr3_1(size_t blocks) noexcept{
@@ -1383,8 +1361,6 @@ void DesCrack::crackTr3_1(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr3_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr3_2(size_t blocks) noexcept{
@@ -1392,8 +1368,6 @@ void DesCrack::crackTr3_2(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr3_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
-   if(hasResult()) cout << "Password: " << password << '\n';
-   else            cout << "No password found.\n";
 }
 
 void DesCrack::crackTr3_3(size_t blocks) noexcept{
@@ -1401,6 +1375,9 @@ void DesCrack::crackTr3_3(size_t blocks) noexcept{
    int dim = (rows + blocks - 1) / blocks;
    crackDesTr3_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
+}
+
+void  DesCrack::printPassword(void) noexcept{
    if(hasResult()) cout << "Password: " << password << '\n';
    else            cout << "No password found.\n";
 }

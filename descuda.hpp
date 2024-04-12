@@ -67,6 +67,7 @@ class DesCrack {
      bool     hasResult(void)                                       noexcept;
      void     execGroups(size_t gr, size_t blocks = 256)            noexcept;
      void     execGroup(size_t gr, size_t blocks = 256)             noexcept;
+     void     printPassword(void)                                   noexcept;
 
 };
 
