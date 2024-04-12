@@ -32,66 +32,66 @@
 using std::cout,
       std::cerr,
       std::string,
-	    std::stoul,
-	    parcmdline::ParseCmdLine,
+      std::stoul,
+      parcmdline::ParseCmdLine,
       descrack::DesCrack;
 
 int main(int argc, char** argv){
-	const char       flags[]         { "hH:d:b:t:T:" };
-	string           hashString      { "" },
-	                 dictFile        { "" };
-	size_t           bthreads        { 256 },
+  const char       flags[]         { "hH:d:b:t:T:" };
+  string           hashString      { "" },
+                   dictFile        { "" };
+  size_t           bthreads        { 256 },
                    transformMode   { 0 };
   bool             multipleGroups  { false },
                    singleGroup     { false };
 
     
-	ParseCmdLine  pcl{argc, argv, flags};
-	if(pcl.getErrorState()){
+  ParseCmdLine  pcl{argc, argv, flags};
+  if(pcl.getErrorState()){
         string exitMsg{string("Invalid  parameter or value").append(pcl.getErrorMsg())};
         cerr << exitMsg << "\n";
         printInfo(argv[0]);
-    }
-	if(pcl.isSet('t') && pcl.isSet('T')){
+  }
+  if(pcl.isSet('t') && pcl.isSet('T')){
         cerr << "-t and -T are mutually exclusive\n";
         printInfo(argv[0]);
   }
 
-	if(pcl.isSet('h'))
+  if(pcl.isSet('h'))
         printInfo(argv[0]);
 
-	if(!pcl.isSet('H') ){
+  if(!pcl.isSet('H') ){
         cerr << "-H flag is mandatory" << "\n";
         printInfo(argv[0]);
-    }
+  }
 
-	if(!pcl.isSet('d') ){
+  if(!pcl.isSet('d') ){
         cerr << "-d flag is mandatory" << "\n";
         printInfo(argv[0]);
     }
 
-	if(pcl.isSet('t') ){
+  if(pcl.isSet('t') ){
      multipleGroups = true;
      transformMode = stoul(pcl.getValue('t'));
   }
 
-	if(pcl.isSet('T') ){
+  if(pcl.isSet('T') ){
      singleGroup = true;
      transformMode = stoul(pcl.getValue('T'));
   }
 
-	if(pcl.isSet('b') ) bthreads      = stoul(pcl.getValue('b'));
+  if(pcl.isSet('b') ) bthreads      = stoul(pcl.getValue('b'));
 
-	hashString = pcl.getValue('H');
-	dictFile = pcl.getValue('d');
+  hashString = pcl.getValue('H');
+  dictFile = pcl.getValue('d');
 
-	DesCrack  tdc(hashString, transformMode);
-	tdc.loadDict(dictFile);
-	tdc.crack(bthreads);
-	if(multipleGroups  && ! tdc.hasResult()) tdc.execGroups(transformMode, bthreads);
-	if(singleGroup && ! tdc.hasResult()) tdc.execGroup(transformMode, bthreads);
+  DesCrack  tdc(hashString, transformMode);
+  tdc.loadDict(dictFile);
+  tdc.crack(bthreads);
+  if(multipleGroups  && ! tdc.hasResult()) tdc.execGroups(transformMode, bthreads);
+  if(singleGroup && ! tdc.hasResult()) tdc.execGroup(transformMode, bthreads);
 
-	return 0;	
+  return 0;	
 }
 
 void printInfo(char* cmd){
@@ -100,7 +100,7 @@ void printInfo(char* cmd){
            << " -d  <dict_file> dictionary file\n" 
            << " -t  <1|2|3>     enable cascading transformation groups\n" 
            << " -T  <1|2|3>     enable specific transformation group\n" 
-	         << " -b  <units>     cuda block size (optional)\n" 
+           << " -b  <units>     cuda block size (optional)\n" 
            << " -h              print this synopsis\n";
       exit(EXIT_FAILURE);
 }

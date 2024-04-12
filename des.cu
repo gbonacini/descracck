@@ -141,9 +141,9 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL;
     *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L));
@@ -152,9 +152,9 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL;
     *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L));
@@ -163,9 +163,9 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL;
     *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L));
@@ -174,117 +174,117 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 5 */ if(shifts2[4]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 6 */ if(shifts2[5]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 7 */ if(shifts2[6]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 8 */ if(shifts2[7]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 9 */ if(shifts2[8]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 10 */ if(shifts2[9]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else { cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 11 */ if(shifts2[10]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 12 */ if(shifts2[11]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 13 */ if(shifts2[12]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 14 */ if(shifts2[13]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 15 */ if(shifts2[14]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
     /* 16 */ if(shifts2[15]){ cc = ((cc >> 2L) | (cc << 26L)); d = ((d >> 2L) | (d << 26L)); } else{ cc = ((cc >> 1L) | (cc << 27L)); d = ((d >> 1L) | (d << 27L));}
     cc &= 0x0fffffffL;
     d &= 0x0fffffffL;
     s = des_skb[0][(cc) & 0x3f] | des_skb[1][((cc >> 6L) & 0x03) | ((cc >> 7L) & 0x3c)] | des_skb[2][((cc >> 13L) & 0x0f) | 
-	((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
+    ((cc >> 14L) & 0x30)] | des_skb[3][((cc >> 20L) & 0x01) | ((cc >> 21L) & 0x06) | ((cc >> 22L) & 0x38)];
     t = des_skb[4][(d) & 0x3f] | des_skb[5][((d >> 7L) & 0x03) | ((d >> 8L) & 0x3c)] | des_skb[6][(d >> 15L) & 0x3f] | 
-	des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
+    des_skb[7][((d >> 21L) & 0x0f) | ((d >> 22L) & 0x30)];
     t2 = ((t << 16L) | (s & 0x0000ffffL)) & 0xffffffffL; *(k++) = ROTATE(t2, 30) & 0xffffffffL;
     t2 = ((s >> 16L) | (t & 0xffff0000L)); *(k++) = ROTATE(t2, 26) & 0xffffffffL;
 
@@ -292,80 +292,80 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
         DES_LONG l = 0, r = 0, t, u, *s = (DES_LONG *)&ks, E0 = Eswap0, E1 = Eswap1;
 
         /* 1 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 2 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 3 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 4 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 5 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 6 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 7 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 8 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 9 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 10 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 11 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 12 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 13 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 14 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 15 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 16 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 17 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 18 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 19 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 20 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 21 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 22 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 23 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 24 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
         /* 25 */ D_ENCRYPT(l, r, 0);  D_ENCRYPT(r, l, 2); D_ENCRYPT(l, r, 4); D_ENCRYPT(r, l, 6); D_ENCRYPT(l, r, 8); D_ENCRYPT(r, l, 10); 
-	D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
-	D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
+    D_ENCRYPT(l, r, 12); D_ENCRYPT(r, l, 14); D_ENCRYPT(l, r, 16); D_ENCRYPT(r, l, 18); D_ENCRYPT(l, r, 20); D_ENCRYPT(r, l, 22); 
+    D_ENCRYPT(l, r, 24); D_ENCRYPT(r, l, 26); D_ENCRYPT(l, r, 28); D_ENCRYPT(r, l, 30); t = l; l = r; r = t;
 
         l = ROTATE(l, 3) & 0xffffffffL;
         r = ROTATE(r, 3) & 0xffffffffL;
@@ -494,10 +494,10 @@ __global__ void crackDes(const char* dict, size_t rows, const char* hash, char* 
       if(result[0] != 0 ) return;
       DES_hash_cuda(dict + (idx * DesCrack::passwordSize ), salt, out);
       if( hash[0] == out[0] && hash[1] == out[1] && hash[2] == out[2] && hash[3] == out[3] && hash[4] == out[4] && 
-	      hash[5] == out[5] && hash[6] == out[6] && hash[7] == out[7] && hash[8] == out[8] && hash[9] == out[9] && 
-	      hash[10] == out[10] && hash[11] == out[11] && hash[12] == out[12] ){
+          hash[5] == out[5] && hash[6] == out[6] && hash[7] == out[7] && hash[8] == out[8] && hash[9] == out[9] && 
+          hash[10] == out[10] && hash[11] == out[11] && hash[12] == out[12] ){
 
-	              resultSem.acquire();
+                  resultSem.acquire();
                   result[0] = *(dict + (idx * DesCrack::passwordSize ) );
                   result[1] = *(dict + (idx * DesCrack::passwordSize ) + 1 );
                   result[2] = *(dict + (idx * DesCrack::passwordSize ) + 2 );
@@ -508,7 +508,7 @@ __global__ void crackDes(const char* dict, size_t rows, const char* hash, char* 
                   result[7] = *(dict + (idx * DesCrack::passwordSize ) + 7 );
                   result[8] = *(dict + (idx * DesCrack::passwordSize ) + 8 );
                   __threadfence();
-	              resultSem.release();
+                  resultSem.release();
       }
    }
 }
@@ -516,10 +516,10 @@ __global__ void crackDes(const char* dict, size_t rows, const char* hash, char* 
 #define CHECK  auto  check { [&]() -> bool{ \
                    DES_hash_cuda(transformed, salt, out); \
                    if( hash[0] == out[0] && hash[1] == out[1] && hash[2] == out[2] && hash[3] == out[3] && hash[4] == out[4] &&  \
-	                   hash[5] == out[5] && hash[6] == out[6] && hash[7] == out[7] && hash[8] == out[8] && hash[9] == out[9] &&  \
-	                   hash[10] == out[10] && hash[11] == out[11] && hash[12] == out[12] ){ \
+                       hash[5] == out[5] && hash[6] == out[6] && hash[7] == out[7] && hash[8] == out[8] && hash[9] == out[9] &&  \
+                       hash[10] == out[10] && hash[11] == out[11] && hash[12] == out[12] ){ \
  \
-	                           resultSem.acquire(); \
+                               resultSem.acquire(); \
                                result[0] = *(transformed  ); \
                                result[1] = *(transformed  + 1 ); \
                                result[2] = *(transformed  + 2 ); \
@@ -530,7 +530,7 @@ __global__ void crackDes(const char* dict, size_t rows, const char* hash, char* 
                                result[7] = *(transformed  + 7 ); \
                                result[8] = *(transformed  + 8 ); \
                                __threadfence(); \
-	                           resultSem.release(); \
+                               resultSem.release(); \
                                return true; \
                    } \
                    return false; \
@@ -1244,28 +1244,28 @@ DesCrack::DesCrack(const string hash, bool  tMode)  noexcept
     int         cudaDetectedDevices  { 0 };
     cudaError_t errorId              { cudaGetDeviceCount(&cudaDetectedDevices) };
     if(errorId != cudaSuccess) {
-	    cerr << "Error probing Cuda devices: " << errorId << " - " << cudaGetErrorString(errorId) << "\n";
-	    abort();
+        cerr << "Error probing Cuda devices: " << errorId << " - " << cudaGetErrorString(errorId) << "\n";
+        abort();
     }
 
     if (cudaDetectedDevices == 0) {
-	    cerr << "Error: No Cuda device found\n";
-	    abort();
+        cerr << "Error: No Cuda device found\n";
+        abort();
     }
 
     if(cudaMallocManaged(&password, passwordSize) != cudaSuccess){
-	    cerr << "Error: allocating unified memory\n";
-	    abort();
+        cerr << "Error: allocating unified memory\n";
+        abort();
     }
 
     if(cudaMallocManaged(&hashTarget, hashSize)  != cudaSuccess){
-	    cerr << "Error: allocating unified memory\n";
-	    abort();
+        cerr << "Error: allocating unified memory\n";
+        abort();
     }
 
     if(hash.size() != hashSize - 1){
-	    cerr << "Error: invalid hash length\n";
-	    abort();
+        cerr << "Error: invalid hash length\n";
+        abort();
     }
 
     fill_n(hashTarget, hashSize, 0);
@@ -1274,9 +1274,9 @@ DesCrack::DesCrack(const string hash, bool  tMode)  noexcept
 }
 
 DesCrack::~DesCrack(void)  noexcept{
-	cudaFree(password);
-	cudaFree(hashTarget);
-	cudaFree(dict);
+    cudaFree(password);
+    cudaFree(hashTarget);
+    cudaFree(dict);
 }
 
 void DesCrack::crack(size_t blocks) noexcept{
@@ -1407,8 +1407,8 @@ void DesCrack::crackTr3_3(size_t blocks) noexcept{
 
 size_t  DesCrack::countDictItems(void)  noexcept{
     if(! is_regular_file(dictFile)){
-	    cerr << "Error: dictionary file wrong path or type.\n";
-	    abort();
+        cerr << "Error: dictionary file wrong path or type.\n";
+        abort();
     }
 
     ifstream dictionary(dictFile);
@@ -1420,10 +1420,10 @@ size_t  DesCrack::countDictItems(void)  noexcept{
 void DesCrack::loadDict(std::string dFile) noexcept{
     dictFile = dFile;
     rows     = countDictItems();
-	cudaFree(dict);
+    cudaFree(dict);
     if( cudaMallocManaged(&dict, rows * cols) != cudaSuccess){
-	    cerr << "Error: allocating unified memory\n";
-	    abort();
+        cerr << "Error: allocating unified memory\n";
+        abort();
     }
     fill_n(dict, rows * cols, 0);
     ifstream dictionary(dictFile);
