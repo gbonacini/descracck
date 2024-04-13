@@ -3,6 +3,8 @@ Introduction:
 
 descracker command permits to perform dictionary attacks ( brute force ) against legacy DES based Unix password hashes. It uses CUDA as acceleration layer. I wrote this program more than 10 years ago, recently I recovered it from a forgotten backup file. I decided to release it with some modernisations ( CUDA and C++ versions ).
 
+![alt text](./screenshots/timeexex.png "Execution Time")
+
 Testing:
 =========
 
