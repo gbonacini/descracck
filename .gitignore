@@ -1,4 +1,4 @@
-.DS_Store
+
 _TMP
 libcrypt.a
 test_crypt
@@ -12,4 +12,5 @@ seclist.txt
 report2.*
 seclist.lower.txt
 descracker
+.DS_Store
 

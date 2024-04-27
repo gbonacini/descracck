@@ -12,7 +12,7 @@ descracker.o: descracker.cu
 	nvcc -c $(OPTS)   -o $@  $<
 
 descracker: descracker.o des.o parseCmdLine.o
-	nvcc $(OPTS)   $ -o $@  $?
+	nvcc $(OPTS)   -o $@  $?
 
 clean:
 	rm -f *.o descracker
