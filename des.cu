@@ -96,7 +96,7 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     DES_LONG              Eswap0, Eswap1, out[2], ll;
     DES_cblock            key[8];
     DES_key_schedule_cuda ks;
-    unsigned char         bb[9], *b = bb, c, u;
+    unsigned char         bb[9], *b { bb }, c, u;
 
     #include "desdata.h"
 
@@ -110,7 +110,7 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     Eswap1 = con_salt[x] << 6;
 
     key[0] = 0; key[1] = 0; key[2] = 0; key[3] = 0; key[4] = 0; key[5] = 0; key[6] = 0; key[7] = 0;
-    int calc = 1;
+    int calc { 1 };
     if(calc){ c = *(buf++); if(c){ key[0] = (c << 1); } else { calc = 0;}; }
     if(calc){ c = *(buf++); if(c){ key[1] = (c << 1); } else { calc = 0;}; }
     if(calc){ c = *(buf++); if(c){ key[2] = (c << 1); } else { calc = 0;}; }
@@ -121,8 +121,8 @@ __device__ void DES_hash_cuda(const char *buf, const char *salt, char *ret) { //
     if(calc){ c = *(buf++); if(c){ key[7] = (c << 1); } else { calc = 0;}; }
 
     static const int    shifts2[16] = { 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0 };
-    DES_LONG            cc, d, t, s, t2, *k = (DES_LONG*)&ks.ks[0];
-    const unsigned char *in = &key[0];
+    DES_LONG            cc, d, t, s, t2, *k { (DES_LONG*)&ks.ks[0] };
+    const unsigned char *in { &key[0] };
 
     c2l(in, cc);
     c2l(in, d);
@@ -808,8 +808,8 @@ __global__ void crackDesTr1_2(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
-      size_t           len = wordSize(word);
+      const char*  word { dict + (idx * DesCrack::passwordSize ) };
+      size_t       len  { wordSize(word) };
       resetFrom(0, word);
       switch(len){
               case 1:
@@ -842,8 +842,8 @@ __global__ void crackDesTr1_3(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
-      size_t      len  = wordSize(word);
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
+      size_t      len  { wordSize(word) };
       resetFrom(0, word);
       switch(len){
               case 1:
@@ -878,8 +878,8 @@ __global__ void crackDesTr1_4(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char*      word = dict + (idx * DesCrack::passwordSize );
-      size_t           len  = wordSize(word);
+      const char*      word { dict + (idx * DesCrack::passwordSize ) };
+      size_t           len  { wordSize(word) };
       resetFrom(0, word);
       switch(len){
               case 1:
@@ -912,7 +912,7 @@ __global__ void crackDesTr1_5(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFrom(0, word);
       for(int idx{0}; idx < DesCrack::passwordSize - 1; idx++){
           if(word[idx] >= 0x61 && word[idx] <= 0x7A ){
@@ -1077,11 +1077,11 @@ __global__ void crackDesTr2_3(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFrom(0, word);
       for(int idx{0}; idx < ( DesCrack::passwordSize - 1 ) && 
                               transformed[idx] !=0; idx++){
-          char newch = leet(transformed[idx]);
+          char newch { leet(transformed[idx]) };
           if(newch != 0 ){
              transformed[idx] = newch;
              if(check()) return;
@@ -1104,11 +1104,11 @@ __global__ void crackDesTr2_4(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFrom(0, word);
       for(int idx{0}; idx < ( DesCrack::passwordSize - 1 ) && 
                               transformed[idx] !=0; idx++){
-          char newch = leet2(transformed[idx]);
+          char newch { leet2(transformed[idx]) };
           if(newch != 0 ){
              transformed[idx] = newch;
              if(check()) return;
@@ -1130,7 +1130,7 @@ __global__ void crackDesTr3_1(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFromCaseToggled(0, word);
       if(check()) return;
     }
@@ -1149,7 +1149,7 @@ __global__ void crackDesTr3_2(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetShift1(word);
       transformed[0] = transformed[1];
       if(check()) return;
@@ -1179,7 +1179,7 @@ __global__ void crackDesTr3_3(const char* dict, size_t rows, const char* hash, c
       const char* word = dict + (idx * DesCrack::passwordSize );
       resetFromReversed(word);
       if(check()) return;
-      size_t           len = wordSize(word);
+      size_t           len { wordSize(word) };
       switch(len){
               case 1:
                   transformed[0]=word[0];
@@ -1281,98 +1281,98 @@ DesCrack::~DesCrack(void)  noexcept{
 
 void DesCrack::crack(size_t blocks) noexcept{
    cout << "Dictionary attack started\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDes<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_1(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : initial-capital\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_2(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : append single digit, initial-capital + append digit\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_3(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : append single special character, initial-capital + append spec. character\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_4(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : append special character, initial-capital + special\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_4<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_5(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : some upper case combinations\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_5<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr1_6(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : add digit(s) at begining, initial-capital + digit(s) at beginning\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr1_6<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr2_1(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : reverse\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr2_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr2_2(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : specular, repeated\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr2_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr2_3(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : leet\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr2_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr2_4(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : leet extended\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr2_4<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr3_1(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : toggle upper/lower case \n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr3_1<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr3_2(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : Initial duplicated lower /upper case\n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr3_2<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
 
 void DesCrack::crackTr3_3(size_t blocks) noexcept{
    cout << "Dictionary attack with transformation  : duplicated characters \n";
-   int dim = (rows + blocks - 1) / blocks;
+   size_t dim { (rows + blocks - 1) / blocks };
    crackDesTr3_3<<<dim, blocks>>>(dict, rows, hashTarget, password);
    cudaDeviceSynchronize();
 }
