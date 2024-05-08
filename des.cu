@@ -784,7 +784,7 @@ __global__ void crackDesTr1_1(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFrom(0, word);
       if(word[0] >= 0x61 && word[0] <= 0x7A ){
              transformed[0] = word[0] - 0x20;
@@ -960,7 +960,7 @@ __global__ void crackDesTr1_6(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetShift1(word);
       if(addSingleNumberFront()) return;
       resetShift2(word);
@@ -981,7 +981,7 @@ __global__ void crackDesTr2_1(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFromReversed(word);
       if(check()) return;
    }
@@ -1002,10 +1002,10 @@ __global__ void crackDesTr2_2(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char*      word = dict + (idx * DesCrack::passwordSize );
+      const char*      word { dict + (idx * DesCrack::passwordSize ) };
       resetFromReversed(word);
       if(check()) return;
-      size_t           len = wordSize(word);
+      size_t           len { wordSize(word) };
       resetFrom(0, word);
       switch(len){
               case 1:
@@ -1176,7 +1176,7 @@ __global__ void crackDesTr3_3(const char* dict, size_t rows, const char* hash, c
 
    for(size_t idx{cidx}; idx<rows; idx += cblk){
       if(result[0] != 0 ) return;
-      const char* word = dict + (idx * DesCrack::passwordSize );
+      const char* word { dict + (idx * DesCrack::passwordSize ) };
       resetFromReversed(word);
       if(check()) return;
       size_t           len { wordSize(word) };
